@@ -5,6 +5,7 @@ Um simples app de roteamento privado e público, que leva em conta sua permissã
 
 ## Techs
 - ReactJS
+- TypeScript
 - Context API
 - React Router Dom
 - Styled Components
