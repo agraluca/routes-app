@@ -1,13 +1,15 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 import Home from "pages/Home";
 import Admin from "pages/Admin";
 import Menu from "components/Menu";
+
 import { PrivateRoute } from "./privateRoute";
+import { permissionTypes } from "utils/permissions";
+
+import NotFound from "pages/NotFound";
 
 import * as paths from "./paths";
-
-import { permissionTypes } from "utils/permissions";
 
 export default function Routes() {
   return (
@@ -21,7 +23,8 @@ export default function Routes() {
           component={Admin}
           permission={permissionTypes.ADMIN}
         />
-        {/* <Route render={() => <h1>404</h1>} /> */}
+        <Route exact path="/404" component={NotFound} />
+        <Redirect from="*" to="/404" />
       </Switch>
     </>
   );

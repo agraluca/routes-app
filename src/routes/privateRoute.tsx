@@ -2,6 +2,8 @@ import { Route, Redirect } from "react-router-dom";
 import { isLoggedIn } from "utils/auth";
 import { hasPermission } from "utils/permissions";
 
+import NotAuthorized from "pages/NotAuthorized";
+
 export const PrivateRoute = ({
   component: Component,
   permission,
@@ -15,7 +17,7 @@ any) => {
       {...rest}
       render={(props) =>
         permission && !hasPermission(permission) ? (
-          <h1>Nao autorizado</h1>
+          <NotAuthorized />
         ) : (
           <Component {...props} />
         )
