@@ -1,21 +1,22 @@
 import Routes from "routes";
+import { BrowserRouter } from "react-router-dom";
 
 import { ThemeProvider } from "styled-components";
 import theme from "styles/theme";
 
-import { Provider } from "react-redux";
-import store from "store";
-
 import GlobalStyles from "styles/global";
+import { AuthProvider } from "hooks/useAuth";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Provider store={store}>
-        <Routes />
-        <GlobalStyles />
-      </Provider>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <AuthProvider>
+          <Routes />
+          <GlobalStyles />
+        </AuthProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 

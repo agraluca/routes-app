@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
       ::-webkit-scrollbar-thumb {
         -webkit-border-radius: 1rem;
         border-radius: 1rem;
-        background: ${theme.colors.purple};
+        background: ${theme.colors.orange};
       }
     }
   `}

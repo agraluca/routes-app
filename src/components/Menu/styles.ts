@@ -1,18 +1,41 @@
 import styled, { css } from "styled-components";
 
-export const Wrapper = styled.menu`
+export const Wrapper = styled.header`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: ${theme.spacings.small};
     background: ${theme.colors.black};
+
+    .menu__logo {
+      text-decoration: none;
+    }
   `}
 `;
 
-export const Logo = styled.img`
-  ${() => css`
-    width: 15rem;
+export const Logo = styled.p`
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      color: ${theme.colors.orange};
+    }
+  `}
+`;
+
+export const Link = styled.button`
+  ${({ theme }) => css`
+    background-color: transparent;
+    color: ${theme.colors.white};
+    font-size: ${theme.font.sizes.medium};
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      color: ${theme.colors.orange};
+    }
   `}
 `;
 
