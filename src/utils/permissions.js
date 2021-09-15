@@ -3,6 +3,7 @@ import { getUser } from "./auth";
 export const permissionTypes = {
   HOME: "HOME",
   ADMIN: "ADMIN",
+  NORMAL: "NORMAL",
 };
 
 export const hasPermission = (permission) => {
